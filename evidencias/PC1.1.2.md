@@ -2,7 +2,7 @@
 Roger Macas
 
 # CODIGO HECHO:
-![alt text](image-1.png)
+![alt text](<GRAFICO SELECTION.png>)
 
 # IMPRESIONES SOLICITADAS:
 Se vio donde se agragaban cambios y pasadas como dentro de los 2 bucles se ejecutan las pasadas
