@@ -1,26 +1,49 @@
 public class App {
     public  static void main(String[] args) throws Exception {
         int [] original = {5, 6, 4, 1, 2, 3};
-        int [] b = original.clone(); 
+        /**
+         * el arreglo original no se puede modificar, por eso 
+         * se hace un clon de este para que se pueda usar en 
+         * los dos metodos de ordenamiento
+         */
+        int [] b = original.clone();
         int [] c = original.clone(); 
+        int [] d = original.clone();
+        /**
+         * el clone sirve para que el arreglo original no se modifique 
+         * y se pueda usar en los dos metodos de ordenamiento
+         */ 
 
         // USAR METODO DEL ARCHIVO(clase) BUBBLE
         System.out.println("---------------------------------------------------");
         // INSTANCIAR el archivo BUBBLE
         // INSTANCIA la clase BUBBLE
         System.out.println("Original:");
-        Bubble Bubble = new Bubble();
-        // EJECUTAR CODIGO DEL ARCHIVO BUBBLE USO LA INSTANCIA Bubble
+        Bubble bubble = new Bubble();
+        // EJECUTAR CODIGO DEL ARCHIVO BUBBLE USO LA INSTANCIA bubble
         printArray(b);
-        Bubble.sort(b);
+        bubble.sort(b);
         printArray(b);
         
         System.out.println("---------------------------------------------------");
         /// Instanciar el archivo SELECTION
-        Selection Selection = new Selection();
+        Selection selection = new Selection();
         printArray(c);
-        Selection.sort(c);
+        selection.sort(c);
         printArray(c);
+        /*
+        el sort sirve para llamar el metodo de ordenamiento SELECTION, se le 
+        pasa el arreglo c que es una copia del arreglo original, 
+        para que se pueda usar en los dos metodos de ordenamiento y
+        el printArray para imprimir el arreglo ordenado despues de usar 
+        el metodo sort
+        */
+        Inserction inserction = new Inserction();
+        printArray(d);
+        inserction.sort(d);
+        printArray(d);
+
+        
 
     }
 
@@ -28,6 +51,11 @@ public class App {
         for (int i = 0; i < arreglo.length; i++) 
             System.out.print(arreglo[i] + " - ");
         System.out.println();
+        /**
+         * este metodo sirve para imprimir el arreglo, 
+         * se le pasa el arreglo que se quiere imprimir y funciona 
+         * con un bucle for que recorre el arreglo y imprime cada elemento
+         */
         
             
     }
