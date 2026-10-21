@@ -4,14 +4,20 @@ public class Inserction {
             int key = arreglo[i];
             int j = i - 1;
             while(j >= 0 && arreglo[j] < key){
-                arreglo[j + 1] = arreglo[j];
+                arreglo[j + 1] = arreglo[j]; 
+                if (arreglo[j] < key) {
+                    System.out.println("El aux= " + key + " " + "se inserta en la pos " + (j));
+                }
                 j--;
-                System.out.println("El aux=" + key + " " + "se inserta en pos " + arreglo[j ] );
+                // el j-- es para que se pueda comparar con el siguiente elemento del arreglo   
+                
+                
+            
             }
             arreglo[j + 1] = key;
             
         }
         return arreglo;
     }
-    
+
 }
