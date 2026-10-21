@@ -38,9 +38,13 @@ public class App {
         el printArray para imprimir el arreglo ordenado despues de usar 
         el metodo sort
         */
+        System.out.println("---------------------------------------------------");
+        System.out.println("-------Selecion Insertion--------");
         Inserction inserction = new Inserction();
+        System.out.println("Original:");
         printArray(d);
         inserction.sort(d);
+        System.out.println("Ordenado Desc:");
         printArray(d);
 
         
