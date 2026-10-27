@@ -1,5 +1,57 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+import models.Estudiante;
+
 public class App {
     public  static void main(String[] args) throws Exception {
+        //runEjemplosPrimitivos();
+        //runEjemplosObjeto()
+        runComparators();
+     
+    }
+    private static void runComparators() {
+        Integer[] original = {5,6,4,1,2,3};
+
+        Arrays.sort(original, Comparator.reverseOrder());
+        //Se modifica el int como Integer para que imprima como objeto y ya no como dato
+        /*  
+        /el sort de la clase Arrays ordena el arreglo original de menor a mayor naturalmente
+        /solo en el caso de los primitivos, para objetos se necesita un comparador
+        /los estaticos se pueden llamar sin instanciar la clase, es decir, 
+        /sin crear un objeto de la clase
+        */ 
+       
+        
+        for (int i = 0; i < original.length; i++) {
+            System.out.print(original[i] + " - ");
+        }
+
+    }
+    private static void runEjemplosObjeto(){
+        Estudiante e1 = new Estudiante("Juan",10.0);
+
+        Estudiante[] estudiantes = {e1,
+            new Estudiante("Maria", 7.0),
+            new Estudiante("Diego", 3.5),
+            new Estudiante("Pedro", 6.8)
+            //Cuando son numeros su orden es ascendente
+        };
+        Bubble bubble = new Bubble();
+        System.out.println("Original:");
+        printEstudiantes(estudiantes);
+        bubble.sortEstudiantes(estudiantes);
+        System.out.println("Ordenado Asc:");
+        printEstudiantes(estudiantes);
+
+
+        
+
+
+
+    }
+    
+    public static void runEjemplosPrimitivos() {
         int [] original = {5, 6, 4, 1, 2, 3};
         /**
          * el arreglo original no se puede modificar, por eso 
@@ -47,20 +99,30 @@ public class App {
         System.out.println("Ordenado Desc:");
         printArray(d);
 
-        
-
     }
 
     public static void printArray(int[] arreglo) {
-        for (int i = 0; i < arreglo.length; i++) 
+        for (int i = 0; i < arreglo.length; i++) {
             System.out.print(arreglo[i] + " - ");
+        }
         System.out.println();
         /**
-         * este metodo sirve para imprimir el arreglo, 
-         * se le pasa el arreglo que se quiere imprimir y funciona 
+         * este metodo sirve para imprimir el arreglo,
+         * se le pasa el arreglo que se quiere imprimir y funciona
          * con un bucle for que recorre el arreglo y imprime cada elemento
          */
-        
-            
+         }
+        public static void printEstudiantes(Estudiante[] estudiantes) { //para descendente, 
+        // cambiar el for a for (int i = estudiantes.length - 1; i >= 0; i--)
+        {
+        for (int i = estudiantes.length - 1; i >= 0; i--) {
+            System.out.println(estudiantes[i].getName() + " - " + estudiantes[i].getNota());
+        }
+        System.out.println();
+    
     }
+    
+    
+}
+
 }
